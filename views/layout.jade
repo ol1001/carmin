@@ -1,0 +1,36 @@
+html5
+html
+  head
+    title
+      | Carmin's Blog
+    link(href='/css/normalize.css', rel='stylesheet')
+    link(href='/css/styles.css', rel='stylesheet')
+  body
+    div.container
+      header
+        div
+          img#face(src="/img/face.jpg")
+        h1
+          | Carmin's Blog
+        nav
+          ul.navMenu
+            li
+              a(href="/") Blog
+            li
+              a(href="/") Skills
+            li
+              a(href="/") About
+            li
+              a(href="/") Contact
+      section.login
+        ul.userSession
+          if session.isLoggedIn
+            li
+              a(href="/logout") Logout
+          else
+            li
+              a(href="/login") Login
+            li
+              a(href="/signup") Create Account
+      section.content
+        block content

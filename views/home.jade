@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  if session.isLoggedIn
+    p
+      a(href="/post/create") New post
+  if !(posts && posts.length)
+    p Nothing to see here. Move along...
+  else
+    ul.posts
+      each post in posts
+        li
+          h2
+            a(href="/post/#{post.id}")= post.title
+                                      br
+                                      span.date
+                                       = post.created.getDate() + "."
+                                       = post.created.getMonth() + "."
+                                       = post.created.getFullYear()
+
+
+
+
