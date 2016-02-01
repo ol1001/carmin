@@ -17,7 +17,7 @@ mongoose.connect('mongodb://localhost/blog', function (err) {
   middleware(app);
   routes(app);
 
-  app.listen(3000, function () {
-    console.log('now listening on http://localhost:3000');
+  app.listen(8300, function () {
+    console.log('now listening on http://localhost:8300');
   });
 });
