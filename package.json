@@ -10,9 +10,11 @@
   "author": "",
   "license": "BSD",
   "dependencies": {
-    "mongoose": "~3.6.15",
+    "email-validator": "~0.1.2",
     "express": "~3.3.4",
+    "express-mongoose": "^0.1.0",
     "jade": "~0.34.1",
-    "email-validator": "~0.1.2"
+    "mongoose": "~3.6.15",
+    "mongoose-lifecycle": "^1.0.0"
   }
 }
