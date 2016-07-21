@@ -1,0 +1,268 @@
+@color-gold: #DBB13B;
+@color-aqua: #56BDA2;
+@color-teal: #2494A2;
+@color-medium-blue: #304B78;
+@color-navy-blue: #2D325A;
+@color-dark-blue: #0A0E29;
+@text-color-light: #e3e3e3;
+@text-color-dark: #3e3e3e;
+
+@font-face {
+  font-family: OpenSans-Light;
+  src: url("../fonts/OpenSans-Light.ttf");
+}
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: OpenSans-Italic;
+  src: url("../fonts/OpenSans-Italic.ttf");
+}
+
+@font-face {
+  font-family: OpenSans-LightItalic;
+  src: url("../fonts/OpenSans-LightItalic.ttf");
+}
+
+body {
+  font-family: OpenSans-Regular, sans-serif;
+  color: @text-color-light;
+}
+
+a {
+  font-family: OpenSans-Light, sans-serif;
+  color: @text-color-light;
+}
+
+section.header {
+  background-color: @color-dark-blue;
+  padding: 24/16rem;
+}
+
+.space-logo {
+  float: left;
+  margin-left: 2%;
+  text-align: center;
+  width: 96/16rem;
+  height: 44/16rem;
+  line-height: 44/16rem;
+  border: 1/16rem solid @color-gold;
+  border-radius: 2/16rem;
+  background-color: darken(@color-dark-blue, 2%);
+}
+
+.space-title {
+  display: block;
+  font-size: 1rem;
+  color: @text-color-light;
+}
+
+nav.space-main-nav {
+  float: right;
+  width: 408/16rem;
+  height: 32/16rem;
+}
+
+nav.space-main-nav ul li {
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 14/16rem 16/16rem;
+}
+
+nav.space-main-nav ul li a:hover {
+  color: #fff;
+}
+
+.clearfix {
+  clear: both;
+}
+
+section.login {
+  position: fixed;
+  padding: 4/16rem;
+  right: 0;
+  top: 144/16rem;
+  background-color: tomato;
+  border-radius: 2/16rem 0 0 2/16rem;
+  outline: 1/16rem solid tomato;
+  outline-offset: 4/16rem;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, .25), 0 2px 0 rgba(0, 0, 0, .1),
+  inset 0 0 20px rgba(0, 0, 0, .1);
+}
+
+ul.userSession li {
+  margin: 4/16rem 0 4/16rem 4/16rem;
+  opacity: 0.9;
+}
+
+ul.userSession li:hover {
+  opacity: 1;
+}
+
+ul.userSession li > a {
+  color: #fff;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20/16rem;
+}
+
+#blog {
+  min-height: 340/16rem;
+  background: @color-navy-blue;
+}
+
+#about {
+  min-height: 280/16rem;
+  background-color: @color-medium-blue;
+}
+
+#skills {
+  min-height: 480/16rem;
+  background-color: @color-aqua;
+}
+
+#contact {
+  min-height: 320/16rem;
+  background-color: @color-gold;
+}
+
+.userLoginForm,
+.userSignUpForm {
+  width: 280/16rem;
+  height: 80/16rem;
+  margin: 5% auto;
+}
+
+.postCreateForm {
+  width: 360/16rem;
+  height: 440/16rem;
+  margin: 5% auto;
+}
+.addCommentForm {
+
+}
+.postCreateForm ul li > input {
+  display: block;
+  text-align: center;
+  width: 320/16rem;
+  height: 26/16rem;
+  line-height: 26/16rem;
+  margin: 0 auto;
+}
+
+.postCreateForm ul li > textarea {
+  margin-top: 20/16rem;
+  height: 420/16rem;
+  width: 360/16rem;
+}
+
+.postCreateForm ul li > input,
+.postCreateForm ul li > textarea,
+.addCommentForm textarea {
+  border: none;
+  border-radius: 2/16rem;
+  background-color: #fff;
+  padding: 3/16rem 8/16rem;
+  box-shadow: inset 0 0 4/16rem rgba(62, 62, 62, 0.5);
+  color: @text-color-dark;
+}
+
+.userLoginForm ul li,
+.userSignUpForm ul li {
+  margin-top: 6/16rem;
+  height: 22/16rem;
+  line-height: 22/16rem;
+}
+
+.userLoginForm ul li > input,
+.userSignUpForm ul li > input {
+  border: none;
+  border-radius: 2/16rem;
+  background-color: @text-color-light;
+  padding: 3/16rem 8/16rem;
+  box-shadow: inset 0 0 4/16rem rgba(62, 62, 62, 0.5);
+  float: right;
+}
+
+.userLoginForm input[type='submit'],
+.userSignUpForm input[type='submit'],
+.postCreateForm input[type='submit'],
+.addCommentForm input[type='submit'] {
+  background-color: darken(@color-navy-blue, 4%);
+  border-radius: 2px;
+  color: @text-color-light;
+  width: 72/16rem;
+  height: 24/16rem;
+  display: block;
+  margin: 16/16rem auto;
+  border: 1px solid lighten(@color-navy-blue, 4%);
+}
+
+.userLoginForm input[type='submit']:hover,
+.userSignUpForm input[type='submit']:hover,
+.postCreateForm input[type='submit']:hover,
+.addCommentForm input[type='submit']:hover {
+  background-color: darken(@color-navy-blue, 6%);
+}
+
+h2, h4 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 24/16rem;
+}
+
+div.error {
+  color: tomato;
+  margin: 16/16rem;
+  text-align: center;
+}
+
+.addNewPost {
+  text-align: center;
+  margin: 16/16rem;
+}
+
+.addNewPost a:hover {
+  color: #fff;
+}
+
+.comments {
+  width: 560/16rem;
+  margin: 5% auto;
+  text-align: center;
+}
+
+.comments ul li {
+  margin: 16/16rem auto;
+}
+
+.comments ul li > p {
+  padding: 4/16rem;
+}
+
+.comments ul li > p:first-child {
+  font-family: OpenSans-Italic, sans-serif;
+}
+
+.comments ul li > p:last-child {
+  font-family: OpenSans-LightItalic, sans-serif;
+}
+
+.postAction {
+  margin-top: 32/16rem;
+}
+
+.postAction a {
+  padding: 8/16rem;
+}
+
+.postCreated {
+  margin: 26/16rem 8/16rem;
+  font-family: OpenSans-Italic;
+}

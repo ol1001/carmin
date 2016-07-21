@@ -1,17 +1,14 @@
 
-extends ../new_layout.pug
+extends ../layout.pug
 
 block content 
-  action = post ? "/post/edit/"+post.id : "/post/create";
-  title = post ? post.title : ''
-  body = post ? post.body : ''
-  form(method="post", action=action)
-    ul
-      li
-        label(for="title") Title
-        input#title(name="title", value=title)
-      li
-        label(for="body") Body
-        textarea#body(name="body")= body
-      li
-        input(type="submit", value="Save")
+  - action= post ? "/post/edit/"+post.id : "/post/create"
+  - title= post ? post.title : ''
+  - body= post ? post.body : ''
+    form.postCreateForm(method="post", action=action)
+      ul
+        li
+          input#title(name="title", value=title, placeholder="Title")
+        li
+          textarea#body(name="body", placeholder="Your article")= body
+      input(type="submit", value="Save")

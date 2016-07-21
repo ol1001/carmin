@@ -1,17 +1,20 @@
 
-extends ../new_layout.pug
+extends ../layout.pug
 
 block content
   h2= post.title
   p!= post.body
-  span= post.created.toGMTString()
-  p by #{post.author.fullname}
-  br
-  br
-  div
-    a(href="/post/edit/" + post.id) Edit
+  div.postCreated
+    span= post.created.toGMTString()
+    p by #{post.author.fullname}
+  div.postAction
+    a(href="/post/edit/" + post.id)
+      i.fa.fa-pencil-square-o(aria-hidden="true")
+      | Edit
     | |
-    a(href="/post/remove/" + post.id) Delete
+    a(href="/post/remove/" + post.id)
+      i.fa.fa-trash(aria-hidden="true")
+      | Delete
   .comments
     ul
       each comment in comments
@@ -19,7 +22,7 @@ block content
           p.text= comment.text
           p.author= comment.author
     if session.isLoggedIn
-      form(method='post', class='editPost', action="/post/comment/" + post.id)
+      form.addCommentForm(method='post', action="/post/comment/" + post.id)
         textarea(name='text')
         br
         input(type='submit', value='Save')

@@ -1,4 +1,4 @@
-extends new_layout
+extends layout.pug
 
 block content
   if session.isLoggedIn
@@ -13,7 +13,7 @@ block content
       each post in posts
         li
           h2
-            a(href="/post/#{post.id}")= post.title
+            a(href="/post/"+post.id)= post.title
                                       br
                                       span.date
                                        = post.created.getDate() + "."

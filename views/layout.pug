@@ -1,0 +1,51 @@
+html5
+html
+    head
+        title
+            | new_space
+        link(href='/css/reset.css', rel='stylesheet')
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+        link(href='/css/style.css', rel='stylesheet')
+        script(src='/js/libs/jquery-2.2.2.min.js')
+        script(src='/js/eventHandlers.js')
+    body
+        section.header
+            div.space-logo
+                a(href="/").space-title new_space
+            nav.space-main-nav
+                ul
+                    li: a(href='#blog')  blog
+                    li: a(href='#about') about
+                    li: a(href='#skills') skills
+                    li: a(href='#contact') contact
+            div.clearfix
+        section.login
+            ul.userSession
+                if session.isLoggedIn
+                    li
+                        a(href="/logout") Logout
+                else
+                    li
+                        a(href="/login" title="login")
+                            i.fa.fa-sign-in.fa-2x(aria-hidden="true")
+
+                    li
+                        a(href="/signup" title="signup")
+                            i.fa.fa-user-plus.fa-2x(aria-hidden="true")
+
+
+        section#blog
+            div.container
+                a(href="/")
+                    h2 Blog
+                block content
+        section#about
+            div.container
+                h2 About me
+                p
+        section#skills
+            div.container
+                h2 My skills
+        section#contact
+            div.container
+                h2 Contact me

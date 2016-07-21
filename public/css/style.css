@@ -1,0 +1,215 @@
+@font-face {
+  font-family: OpenSans-Light;
+  src: url("../fonts/OpenSans-Light.ttf");
+}
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url("../fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: OpenSans-Italic;
+  src: url("../fonts/OpenSans-Italic.ttf");
+}
+@font-face {
+  font-family: OpenSans-LightItalic;
+  src: url("../fonts/OpenSans-LightItalic.ttf");
+}
+body {
+  font-family: OpenSans-Regular, sans-serif;
+  color: #e3e3e3;
+}
+a {
+  font-family: OpenSans-Light, sans-serif;
+  color: #e3e3e3;
+}
+section.header {
+  background-color: #0A0E29;
+  padding: 1.5rem;
+}
+.space-logo {
+  float: left;
+  margin-left: 2%;
+  text-align: center;
+  width: 6rem;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  border: 0.0625rem solid #DBB13B;
+  border-radius: 0.125rem;
+  background-color: #080b21;
+}
+.space-title {
+  display: block;
+  font-size: 1rem;
+  color: #e3e3e3;
+}
+nav.space-main-nav {
+  float: right;
+  width: 25.5rem;
+  height: 2rem;
+}
+nav.space-main-nav ul li {
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 0.875rem 1rem;
+}
+nav.space-main-nav ul li a:hover {
+  color: #fff;
+}
+.clearfix {
+  clear: both;
+}
+section.login {
+  position: fixed;
+  padding: 0.25rem;
+  right: 0;
+  top: 9rem;
+  background-color: tomato;
+  border-radius: 0.125rem 0 0 0.125rem;
+  outline: 0.0625rem solid tomato;
+  outline-offset: 0.25rem;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.25), 0 2px 0 rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+ul.userSession li {
+  margin: 0.25rem 0 0.25rem 0.25rem;
+  opacity: 0.9;
+}
+ul.userSession li:hover {
+  opacity: 1;
+}
+ul.userSession li > a {
+  color: #fff;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+#blog {
+  min-height: 21.25rem;
+  background: #2D325A;
+}
+#about {
+  min-height: 17.5rem;
+  background-color: #304B78;
+}
+#skills {
+  min-height: 30rem;
+  background-color: #56BDA2;
+}
+#contact {
+  min-height: 20rem;
+  background-color: #DBB13B;
+}
+.userLoginForm,
+.userSignUpForm {
+  width: 17.5rem;
+  height: 5rem;
+  margin: 5% auto;
+}
+.postCreateForm {
+  width: 22.5rem;
+  height: 27.5rem;
+  margin: 5% auto;
+}
+.postCreateForm ul li > input {
+  display: block;
+  text-align: center;
+  width: 20rem;
+  height: 1.625rem;
+  line-height: 1.625rem;
+  margin: 0 auto;
+}
+.postCreateForm ul li > textarea {
+  margin-top: 1.25rem;
+  height: 26.25rem;
+  width: 22.5rem;
+}
+.postCreateForm ul li > input,
+.postCreateForm ul li > textarea,
+.addCommentForm textarea {
+  border: none;
+  border-radius: 0.125rem;
+  background-color: #fff;
+  padding: 0.1875rem 0.5rem;
+  box-shadow: inset 0 0 0.25rem rgba(62, 62, 62, 0.5);
+  color: #3e3e3e;
+}
+.userLoginForm ul li,
+.userSignUpForm ul li {
+  margin-top: 0.375rem;
+  height: 1.375rem;
+  line-height: 1.375rem;
+}
+.userLoginForm ul li > input,
+.userSignUpForm ul li > input {
+  border: none;
+  border-radius: 0.125rem;
+  background-color: #e3e3e3;
+  padding: 0.1875rem 0.5rem;
+  box-shadow: inset 0 0 0.25rem rgba(62, 62, 62, 0.5);
+  float: right;
+}
+.userLoginForm input[type='submit'],
+.userSignUpForm input[type='submit'],
+.postCreateForm input[type='submit'],
+.addCommentForm input[type='submit'] {
+  background-color: #262a4c;
+  border-radius: 2px;
+  color: #e3e3e3;
+  width: 4.5rem;
+  height: 1.5rem;
+  display: block;
+  margin: 1rem auto;
+  border: 1px solid #343a68;
+}
+.userLoginForm input[type='submit']:hover,
+.userSignUpForm input[type='submit']:hover,
+.postCreateForm input[type='submit']:hover,
+.addCommentForm input[type='submit']:hover {
+  background-color: #232746;
+}
+h2,
+h4 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+div.error {
+  color: tomato;
+  margin: 1rem;
+  text-align: center;
+}
+.addNewPost {
+  text-align: center;
+  margin: 1rem;
+}
+.addNewPost a:hover {
+  color: #fff;
+}
+.comments {
+  width: 35rem;
+  margin: 5% auto;
+  text-align: center;
+}
+.comments ul li {
+  margin: 1rem auto;
+}
+.comments ul li > p {
+  padding: 0.25rem;
+}
+.comments ul li > p:first-child {
+  font-family: OpenSans-Italic, sans-serif;
+}
+.comments ul li > p:last-child {
+  font-family: OpenSans-LightItalic, sans-serif;
+}
+.postAction {
+  margin-top: 2rem;
+}
+.postAction a {
+  padding: 0.5rem;
+}
+.postCreated {
+  margin: 1.625rem 0.5rem;
+  font-family: OpenSans-Italic;
+}
