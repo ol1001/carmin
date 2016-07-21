@@ -1,9 +1,11 @@
-extends layout
+extends new_layout
 
 block content
   if session.isLoggedIn
-    p
-      a(href="/post/create") New post
+    p.addNewPost
+      a(href="/post/create")
+          i.fa.fa-pencil(aria-hidden="true")
+          |&nbsp; New post
   if !(posts && posts.length)
     p Nothing to see here. Move along...
   else

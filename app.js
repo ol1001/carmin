@@ -14,6 +14,7 @@ mongoose.connect('mongodb://localhost/blog', function (err) {
   if (err) throw err;
 
   var app = express(); //create http-server
+  app.set('view engine', 'pug');
   middleware(app);
   routes(app);
 
