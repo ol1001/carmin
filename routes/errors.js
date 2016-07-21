@@ -16,11 +16,11 @@ module.exports = function (app) {
     // default response type
     res.type('txt');
     res.send("Hmmm, couldn't find that page.");
-  })
+  });
 
    // 500
   app.use(function (err, req, res, next) {
     console.error('error at %s\n', req.url, err.stack);
     res.send(500, "Oops, we made a boo boo.");
-  })
-}
+  });
+};

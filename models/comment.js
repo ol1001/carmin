@@ -9,7 +9,7 @@ var schema = mongoose.Schema({
     text: { type: String, trim: true, validate: validateText }
   , post: { type: ObjectId, index: true }
   , author: String
-})
+});
 
 function validateText (str) {
   return str.length < 250;

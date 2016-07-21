@@ -13,8 +13,8 @@
     "email-validator": "~0.1.2",
     "express": "~3.3.4",
     "express-mongoose": "^0.1.0",
-    "jade": "~0.34.1",
     "mongoose": "~3.6.15",
-    "mongoose-lifecycle": "^1.0.0"
+    "mongoose-lifecycle": "^1.0.0",
+    "pug": "^2.0.0-beta4"
   }
 }

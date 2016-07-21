@@ -10,9 +10,9 @@ module.exports = function (app) {
   app.get('/', function (req, res, next) {
     BlogPost.find().sort('created').limit(10).exec(function (err, posts) {
       if (err) return next(err);
-      res.render('home.jade', { posts: posts });
+      res.render('home.pug', { posts: posts });
     })
-  })
+  });
 
   // login / logout routes
   login(app);
@@ -22,4 +22,4 @@ module.exports = function (app) {
 
   // error handlers
   errors(app);
-}
+};

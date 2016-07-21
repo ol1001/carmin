@@ -8,7 +8,7 @@ var crypto = require('crypto');
 module.exports = function (app) {
 
   app.get('/signup', function (req, res) {
-    res.render('signup.jade');
+    res.render('signup.pug');
   });
 
   // create new account
@@ -25,7 +25,7 @@ module.exports = function (app) {
       if (err) return next(err);
 
       if (user) {
-        return res.render('signup.jade', { exists: true });
+        return res.render('signup.pug', { exists: true });
       }
 
       crypto.randomBytes(16, function (err, bytes) {
@@ -50,17 +50,17 @@ module.exports = function (app) {
           return res.redirect('/');
         })
       })
-    })
+    });
 
     function invalid () {
-      return res.render('signup.jade', { invalid: true });
+      return res.render('signup.pug', { invalid: true });
     }
   });
 
   
   app.get('/login', function (req, res) {
-    res.render('login.jade');
-  })
+    res.render('login.pug');
+  });
 
   app.post('/login', function (req, res, next) {
     // validate input
@@ -89,16 +89,16 @@ module.exports = function (app) {
       req.session.isLoggedIn = true;
       req.session.user = email;
       res.redirect('/');
-    })
+    });
 
     function invalid () {
-      return res.render('login.jade', { invalid: true });
+      return res.render('login.pug', { invalid: true });
     }
-  })
+  });
 
   app.get('/logout', function (req, res) {
     req.session.isLoggedIn = false;
     req.session.user = null;
     res.redirect('/');
-  })
-}
+  });
+};

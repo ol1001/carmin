@@ -6,7 +6,7 @@ var Comment = mongoose.model('Comment');
 module.exports = function (app) {
   // create
   app.get("/post/create", loggedIn, function (req, res) {
-    res.render('post/create.jade');
+    res.render('post/create.pug');
   })
 
   app.post("/post/create", loggedIn, function (req, res, next) {
@@ -25,7 +25,7 @@ module.exports = function (app) {
 
     // notify twitter that we published a new post using model hook
 
-  })
+  });
 
 
   // read
@@ -43,16 +43,16 @@ module.exports = function (app) {
 
       if (!post) return next(); // 404
 
-      res.render('post/view.jade', { post: post, comments: promise });
+      res.render('post/view.pug', { post: post, comments: promise });
     })
-  })
+  });
 
 
 
 
   // update
   app.get("/post/edit/:id", loggedIn, function (req, res, next) {
-    res.render('post/create.jade', {
+    res.render('post/create.pug', {
       post: BlogPost.findById(req.param('id'))
     });
   })
