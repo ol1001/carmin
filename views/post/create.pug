@@ -11,4 +11,10 @@ block content
           input#title(name="title", value=title, placeholder="Title")
         li
           textarea#body(name="body", placeholder="Your article")= body
-      input(type="submit", value="Save")
+      input#img.inputImg(type="file",name="img",multiple)
+      label(for="img", title="add image")
+        i.fa.fa-file-image-o(aria-hidden="true")
+      input#save.savePost(type="submit",name="save")
+      label(for="save", title="save post")
+        i.fa.fa-floppy-o(aria-hidden="true")
+

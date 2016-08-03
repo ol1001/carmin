@@ -1,20 +1,27 @@
 {
-  "name": "blog",
+  "name": "ol1001_space",
   "private": true,
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel ./public/js/src/ --out-file ./public/js/bundle.js"
   },
-  "author": "",
+  "author": "ol1001",
   "license": "BSD",
   "dependencies": {
+    "babel-cli": "^6.11.4",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
     "email-validator": "~0.1.2",
-    "express": "~3.3.4",
+    "express": "^4.13.3",
     "express-mongoose": "^0.1.0",
+    "express-session": "^1.14.0",
+    "formidable": "^1.0.17",
+    "logger": "0.0.1",
     "mongoose": "~3.6.15",
     "mongoose-lifecycle": "^1.0.0",
+    "morgan": "^1.7.0",
     "pug": "^2.0.0-beta4"
   }
 }

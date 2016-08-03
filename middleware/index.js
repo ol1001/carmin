@@ -1,14 +1,23 @@
 var express = require('express');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var bodyParser = require('body-parser');
+var logger = require('morgan');
 
 module.exports = function (app) {
-  app.use(express.logger('dev'));
 
   // this is good enough for now but you'll
   // want to use connect-mongo or similar
   // for persistant sessions
-  app.use(express.cookieParser());
-  app.use(express.session({ secret: 'building a blog' }));
-  app.use(express.bodyParser());
+  app.use(logger('combined'));
+  app.use(cookieParser());
+  app.use(session({
+    secret: 'building a blog',
+    resave: false,
+    saveUninitialized: true}));
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
   app.use(express.static('public'));
 
   // expose session to views

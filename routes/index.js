@@ -1,6 +1,7 @@
 var errors = require('./errors');
 var login = require('./login');
 var posts = require('./posts');
+var admin = require('./admin');
 var mongoose = require('mongoose');
 var BlogPost = mongoose.model('BlogPost');
 
@@ -22,4 +23,8 @@ module.exports = function (app) {
 
   // error handlers
   errors(app);
+
+  // admin panel
+  admin(app);
+
 };

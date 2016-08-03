@@ -7,7 +7,7 @@ html
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
         link(href='/css/style.css', rel='stylesheet')
         script(src='/js/libs/jquery-2.2.2.min.js')
-        script(src='/js/eventHandlers.js')
+        script(src='/js/bundle.js')
     body
         section.header
             div.space-logo
@@ -27,11 +27,11 @@ html
                 else
                     li
                         a(href="/login" title="login")
-                            i.fa.fa-sign-in.fa-2x(aria-hidden="true")
+                            i.fa.fa-sign-in(aria-hidden="true")
 
                     li
                         a(href="/signup" title="signup")
-                            i.fa.fa-user-plus.fa-2x(aria-hidden="true")
+                            i.fa.fa-user-plus(aria-hidden="true")
 
 
         section#blog

@@ -80,7 +80,7 @@ ul.userSession li > a {
   color: #fff;
 }
 .container {
-  width: 80%;
+  width: 65%;
   margin: 0 auto;
   padding: 1.25rem;
 }
@@ -106,7 +106,9 @@ ul.userSession li > a {
   height: 5rem;
   margin: 5% auto;
 }
+/* CREATE POST */
 .postCreateForm {
+  position: relative;
   width: 22.5rem;
   height: 27.5rem;
   margin: 5% auto;
@@ -133,6 +135,45 @@ ul.userSession li > a {
   padding: 0.1875rem 0.5rem;
   box-shadow: inset 0 0 0.25rem rgba(62, 62, 62, 0.5);
   color: #3e3e3e;
+}
+.inputImg,
+.savePost {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -10;
+}
+.inputImg + label,
+.savePost + label {
+  position: absolute;
+  background-color: #2494A2;
+  display: inline-block;
+  cursor: pointer;
+  border-top: 0.0625rem solid #304B78;
+  border-right: 0.0625rem solid #304B78;
+  border-bottom: 0.0625rem solid #304B78;
+  border-radius: 0 0.125rem 0.125rem 0;
+  padding: 8px 16px;
+  color: #e3e3e3;
+}
+.inputImg + label {
+  top: 80px;
+  right: -47px;
+}
+.savePost + label {
+  top: 120px;
+  right: -47px;
+}
+.inputImg:focus + label,
+.inputImg + label:hover,
+.savePost:focus + label,
+.savePost + label:hover {
+  /* background-color: #00bcd4;
+  border-color: #00ACC1;*/
+  background-color: #56BDA2;
+  border-color: #2494A2;
 }
 .userLoginForm ul li,
 .userSignUpForm ul li {
@@ -212,4 +253,15 @@ div.error {
 .postCreated {
   margin: 1.625rem 0.5rem;
   font-family: OpenSans-Italic;
+}
+section#users {
+  background-color: #56BDA2;
+}
+div.uploadedImg img {
+  display: block;
+  width: 25rem;
+  border: 0.0625rem solid #2494A2;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  margin: 1.5rem auto;
 }
