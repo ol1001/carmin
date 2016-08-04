@@ -25,4 +25,9 @@ block content
       form.addCommentForm(method='post', action="/post/comment/" + post.id)
         textarea(name='text')
         br
-        input(type='submit', value='Save')
+        ul.userAction
+              li
+                button(type='submit') Save
+              li
+                a(href="/")
+                  button.userCancel(type='button') Cancel

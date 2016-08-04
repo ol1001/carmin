@@ -1,0 +1,20 @@
+html5
+html
+    head
+        title
+            | admin_space
+        link(href='/css/reset.css', rel='stylesheet')
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+        link(href='/css/style.css', rel='stylesheet')
+        script(src='/js/libs/jquery-2.2.2.min.js')
+    body
+        section#users
+            table.usersList
+                tr
+                    th Name
+                    th Last
+                each user in users
+                    tr
+                        td= user.name.first
+                        td= user.name.last
+

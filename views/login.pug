@@ -13,5 +13,10 @@ block content
         label(for='pass') Password
         input#pass(name='pass', type='password')
         div.clearfix
-    input(type='submit', value='Log In')
+    ul.userAction
+      li
+        button(type='submit') Log In
+      li
+        a(href="/")
+          button.userCancel(type='button') Cancel
 
