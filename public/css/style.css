@@ -23,7 +23,7 @@ a {
   color: #e3e3e3;
 }
 section.header {
-  background-color: #0A0E29;
+  background: #2D325A url('../img/moon2.jpg') -130px -80px no-repeat;
   padding: 1.5rem;
 }
 .space-logo {
@@ -35,7 +35,7 @@ section.header {
   line-height: 2.75rem;
   border: 0.0625rem solid #DBB13B;
   border-radius: 0.125rem;
-  background-color: #080b21;
+  background-color: #292e52;
 }
 .space-title {
   display: block;
@@ -86,7 +86,18 @@ ul.userSession li > a {
 }
 #blog {
   min-height: 21.25rem;
-  background: #2D325A;
+  background-color: #fff;
+}
+#blog p,
+#blog a,
+#blog h2,
+#blog h3,
+#blog h4,
+#blog span {
+  color: #4d4d4d;
+}
+#blog h1 {
+  color: #2D325A;
 }
 #about {
   min-height: 17.5rem;
@@ -106,11 +117,15 @@ ul.userSession li > a {
   height: 5rem;
   margin: 5% auto;
 }
+.userLoginForm label,
+.userSignUpForm label {
+  color: #4d4d4d;
+}
 /* CREATE POST */
 .postCreateForm {
-  position: relative;
+  position: static;
   width: 22.5rem;
-  height: 27.5rem;
+  min-height: 27.5rem;
   margin: 5% auto;
 }
 .postCreateForm ul li > input {
@@ -119,7 +134,7 @@ ul.userSession li > a {
   width: 20rem;
   height: 1.625rem;
   line-height: 1.625rem;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 .postCreateForm ul li > textarea {
   margin-top: 1.25rem;
@@ -129,12 +144,14 @@ ul.userSession li > a {
 .postCreateForm ul li > input,
 .postCreateForm ul li > textarea,
 .addCommentForm textarea {
-  border: none;
-  border-radius: 0.125rem;
   background-color: #fff;
   padding: 0.1875rem 0.5rem;
-  box-shadow: inset 0 0 0.25rem rgba(62, 62, 62, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   color: #3e3e3e;
+}
+.addCommentForm textarea {
+  width: 340px;
+  height: 60px;
 }
 .inputImg,
 .savePost {
@@ -147,33 +164,32 @@ ul.userSession li > a {
 }
 .inputImg + label,
 .savePost + label {
-  position: absolute;
-  background-color: #2494A2;
+  color: #4d4d4d;
   display: inline-block;
   cursor: pointer;
-  border-top: 0.0625rem solid #304B78;
-  border-right: 0.0625rem solid #304B78;
-  border-bottom: 0.0625rem solid #304B78;
-  border-radius: 0 0.125rem 0.125rem 0;
+  border-top: 0.0625rem solid rgba(0, 0, 0, 0.2);
+  border-right: 0.0625rem solid rgba(0, 0, 0, 0.2);
+  border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.2);
   padding: 8px 16px;
-  color: #e3e3e3;
+  background-color: #F0F0F0;
 }
 .inputImg + label {
-  top: 80px;
-  right: -47px;
+  position: relative;
+  left: 360px;
+  top: -420px;
 }
 .savePost + label {
-  top: 120px;
-  right: -47px;
+  position: relative;
+  left: 313px;
+  top: -364px;
 }
 .inputImg:focus + label,
 .inputImg + label:hover,
 .savePost:focus + label,
 .savePost + label:hover {
-  /* background-color: #00bcd4;
-  border-color: #00ACC1;*/
   background-color: #56BDA2;
   border-color: #2494A2;
+  color: #fff;
 }
 .userLoginForm ul li,
 .userSignUpForm ul li {
@@ -183,11 +199,11 @@ ul.userSession li > a {
 }
 .userLoginForm ul li > input,
 .userSignUpForm ul li > input {
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #4d4d4d;
   border-radius: 0.125rem;
-  background-color: #e3e3e3;
+  background-color: #F0F0F0;
   padding: 0.1875rem 0.5rem;
-  box-shadow: inset 0 0 0.25rem rgba(62, 62, 62, 0.5);
   float: right;
 }
 ul.userAction {
@@ -200,23 +216,25 @@ ul.userAction li {
   display: inline-block;
 }
 .userAction button {
-  background-color: #262a4c;
+  background-color: #F0F0F0;
   border-radius: 2px;
-  color: #e3e3e3;
+  color: #4d4d4d;
   width: 4.5rem;
   height: 1.5rem;
   margin: 1rem;
   padding: 0.25rem 0.5rem;
-  border: 1px solid #343a68;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.2);
 }
 .userAction button:hover {
-  background-color: #232746;
+  background-color: #56BDA2;
+  color: #fff;
 }
+h1,
 h2,
 h4 {
   text-align: center;
-  font-size: 1.2rem;
   margin-bottom: 1.5rem;
+  font-family: OpenSans-Regular, sans-serif;
 }
 div.error {
   color: tomato;
@@ -255,7 +273,7 @@ div.error {
 }
 .postCreated {
   margin: 1.625rem 0.5rem;
-  font-family: OpenSans-Italic;
+  font-family: OpenSans-Italic, sans-serif;
 }
 section#users {
   background-color: #56BDA2;
@@ -263,7 +281,8 @@ section#users {
 div.uploadedImg img {
   display: block;
   width: 25rem;
-  border: 0.0625rem solid #2494A2;
+  /*border: 0.0625rem solid #2494A2;*/
+  border: 0.0625rem solid #4d4d4d;
   border-radius: 0.25rem;
   padding: 0.25rem;
   margin: 1.5rem auto;

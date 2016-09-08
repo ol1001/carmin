@@ -1,7 +1,7 @@
 var errors = require('./errors');
 var login = require('./login');
 var posts = require('./posts');
-var admin = require('./admin');
+//var admin = require('./admin');
 var mongoose = require('mongoose');
 var BlogPost = mongoose.model('BlogPost');
 
@@ -25,6 +25,6 @@ module.exports = function (app) {
   errors(app);
 
   // admin panel
-  admin(app);
+  // admin(app);
 
 };

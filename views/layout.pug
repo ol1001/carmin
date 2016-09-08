@@ -1,12 +1,15 @@
-html5
+doctype html
 html
     head
         title
             | new_space
-        link(href='/css/reset.css', rel='stylesheet')
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+        link(href='/css/reset.css', rel='stylesheet')
         link(href='/css/style.css', rel='stylesheet')
+        link(href='/img/favicon.ico' rel='icon')
         script(src='/js/libs/jquery-2.2.2.min.js')
+        script(src='//cdn.tinymce.com/4/tinymce.min.js')
+        script(src='/configs/tinymce.js')
         script(src='/js/bundle.js')
     body
         section.header
@@ -37,15 +40,15 @@ html
         section#blog
             div.container
                 a(href="/")
-                    h2 Blog
+                    h1 Blog
                 block content
         section#about
             div.container
-                h2 About me
+                h1 About me
                 p
         section#skills
             div.container
-                h2 My skills
+                h1 My skills
         section#contact
             div.container
-                h2 Contact me
+                h1 Contact me

@@ -1,4 +1,5 @@
 var inputImage = function (element) {
+    console.log("function running");
 
     element.on('change', function (e) {
         var files = e.target.files;
@@ -44,7 +45,7 @@ function addImgToPost(imgName, container){
         + "' alt="
         + imgName
         + "/></div>";
-
+    console.log(container);
     container.val(container.val() + imgContainer);
 }
 
