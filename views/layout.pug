@@ -22,21 +22,6 @@ html
                     li: a(href='#skills') skills
                     li: a(href='#contact') contact
             div.clearfix
-        section.login
-            ul.userSession
-                if session.isLoggedIn
-                    li
-                        a(href="/logout") Logout
-                else
-                    li
-                        a(href="/login" title="login")
-                            i.fa.fa-sign-in(aria-hidden="true")
-
-                    li
-                        a(href="/signup" title="signup")
-                            i.fa.fa-user-plus(aria-hidden="true")
-
-
         section#blog
             div.container
                 a(href="/")

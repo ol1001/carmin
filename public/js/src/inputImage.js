@@ -14,7 +14,11 @@ var inputImage = function (element) {
                 var file = files[i];
 
                 // add the files to formData object for the data payload
-                formData.append('uploads[]', file, file.name);
+                if (isFileValid(file)) {
+                    formData.append('uploads[]', file, file.name);
+                } else {
+                    alert("Image is not suitable for this resource");
+                }
             }
 
             $.ajax({
@@ -23,41 +27,26 @@ var inputImage = function (element) {
                 data: formData,
                 processData: false,
                 contentType: false,
+                withCredentials: true,
                 success: function () {
-                    formData.getAll('uploads[]').forEach(function(img){
-                        addImgToPost(img.name, $("textarea#body"));
-                    })
+                    formData.getAll('uploads[]').forEach(function (img) {
+                        var el = $("iframe").contents().find("body#tinymce");
+                        addImgToPost(img.name, el);
+                    });
                 },
                 error: function () {
                     console.log("can't upload file");
                 }
             });
         }
-
     });
-
 };
 
-function addImgToPost(imgName, container){
-    var imgContainer = "<div class='uploadedImg'><img src='"
-        + "/uploads/"
-        + imgName
-        + "' alt="
-        + imgName
-        + "/></div>";
-    console.log(container);
-    container.val(container.val() + imgContainer);
+function addImgToPost(imgName, container) {
+    var imgContainer = "<div class='uploadedImg'><img src='" + "/uploads/" + imgName + "' alt=" + imgName + "/></div>";
+    container.append(imgContainer);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
+function isFileValid(file) {
+    console.log(file.size);
+    return file.name.match(/.+\.(jpg|png)$/i) && file.size <= 2000000;
+}
