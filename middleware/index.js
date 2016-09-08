@@ -19,7 +19,11 @@ module.exports = function (app) {
     extended: true
   }));
   app.use(express.static('public'));
-
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
   // expose session to views
   app.use(function (req, res, next) {
     res.locals.session = req.session;

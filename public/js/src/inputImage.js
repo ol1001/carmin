@@ -1,5 +1,4 @@
 var inputImage = function (element) {
-    console.log("function running");
 
     element.on('change', function (e) {
         var files = e.target.files;

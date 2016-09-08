@@ -37,7 +37,7 @@ module.exports = function (app) {
             fs.rename(file.path, path.join(form.uploadDir, file.name), function (err) {
                 if (err) next(err);
 
-                res.end(res.setHeader('Access-Control-Allow-Origin','*'));
+                res.end(JSON.stringify({location: "/uploads/" + file.name}));
             });
         });
 
