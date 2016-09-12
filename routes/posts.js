@@ -28,7 +28,22 @@ module.exports = function (app) {
     });
 
     // upload img
-    app.post("/post/uploads", loggedIn, function (req, res, next) {
+    app.post('/post/uploads', function(req, res){
+        var form = new formidable.IncomingForm();
+        form.multiples = true;
+        form.uploadDir = path.join(__dirname, '../public/uploads');
+        form.on('file', function(field, file) {
+            fs.rename(file.path, path.join(form.uploadDir, file.name));
+        });
+        form.on('error', function(err) {
+            console.log('An error has occured: \n' + err);
+        });
+        form.on('end', function() {
+            res.end('success');
+        });
+        form.parse(req);
+    });
+    /*app.post("/post/uploads", loggedIn, function (req, res, next) {
         var form = new formidable.IncomingForm();
         form.multiples = true;
         form.uploadDir = path.join(__dirname, '../public/uploads');
@@ -41,7 +56,7 @@ module.exports = function (app) {
             });
         });
 
-    });
+    });*/
 
     app.get("/post/uploads/:img", function (req, res, next) {
         var imgName = req.param('img');

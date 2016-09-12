@@ -27,14 +27,14 @@ var inputImage = function (element) {
                 processData: false,
                 contentType: false,
                 withCredentials: true,
-                success: function () {
+                success: function (data) {
                     formData.getAll('uploads[]').forEach(function (img) {
                         var el = $("iframe").contents().find("body#tinymce");
                         addImgToPost(img.name, el);
                     });
                 },
-                error: function () {
-                    console.log("can't upload file");
+                error: function (err) {
+                    console.log("can't upload file " + err);
                 }
             });
         }
