@@ -28,19 +28,24 @@ module.exports = function (app) {
     });
 
     // upload img
-    app.post("/post/upload", loggedIn, function (req, res) {
+    app.post("/post/uploads", loggedIn, function (req, res, next) {
         var form = new formidable.IncomingForm();
         form.multiples = true;
         form.uploadDir = path.join(__dirname, '../public/uploads');
         form.parse(req);
         form.on('file', function (field, file) {
             fs.rename(file.path, path.join(form.uploadDir, file.name), function (err) {
-                if (err) next(err);
+                if (err) return next(err);
 
                 res.end(JSON.stringify({location: "/uploads/" + file.name}));
             });
         });
 
+    });
+
+    app.get("/post/uploads/:img", function (req, res, next) {
+        var imgName = req.param('img');
+        res.redirect('/uploads/'+imgName);
     });
 
     // read
@@ -111,7 +116,6 @@ module.exports = function (app) {
         }, function (err, comment) {
             if (err) return next(err);
 
-            // TODO probably want to do this all with with xhr
             res.redirect("/post/" + id);
         });
     });

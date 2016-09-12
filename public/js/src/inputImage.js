@@ -21,7 +21,7 @@ var inputImage = function (element) {
             }
 
             $.ajax({
-                url: '/post/upload',
+                url: '/post/uploads',
                 type: 'POST',
                 data: formData,
                 processData: false,
