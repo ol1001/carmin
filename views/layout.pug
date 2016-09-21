@@ -15,7 +15,7 @@ html
     body
         section.header
             div.space-logo
-                a(href="/").space-title new_space
+                a(href="/").space-title ol_space
             nav.space-main-nav
                 ul
                     li: a(href='/')  blog
@@ -26,15 +26,33 @@ html
         section#blog
             div.container
                 a(href="/")
-                    h1 Blog
+                    h1 Notes
                 block content
         section#about
             div.container
                 h1 About me
-                p
+                img(src="../img/ava.JPG" alt="Olga Stratii")
+                p Hi, I'm Olga:) Technology, code and volunteering excites me in my life. Also I like to travel. For this moment I have been visited more than 20 countries.
         section#skills
             div.container
                 h1 My skills
+                h2.accounts-links
+                    a(href="http://github.com/ol1001" target="_blank")
+                        i.fa.fa-github-alt(aria-hidden="true")
+                    a(href="http://codepen.io/carmin/" target="_blank")
+                        i.fa.fa-codepen(aria-hidden="true")
+                    a(href="mailto:stratii.olga@gmail.com" target="_blank")
+                        i.fa.fa-envelope(aria-hidden="true")
+                ul
+                    li JavaScript (FrontEnd: Javascript, JQuery; BackEnd: node.js, express, jade/pug, npm)
+                    li HTML5, CSS3, LESS, Bootstrap
+                    li Databases: MongoDB (academy certificated M101JS, M102), MySQL
+                    li GIT
+                    li Regular Expressions (Perl, JavaScript)
+                    li IT Infrastructure: Network services and protocols (TCP/IP stack, routing, switching); Unix-like OS (linux, *BSD, Solaris)
+
         section#contact
             div.container
                 h1 Contact me
+                p Olga Stratii
+                a(href="mailto:stratii.olga@gmail.com") stratii.olga@gmail.com

@@ -103,33 +103,13 @@ ul.userSession li > a {
   min-height: 17.5rem;
   background-color: #304B78;
 }
-#about p {
-  margin: 1rem 15%;
-}
 #skills {
-  min-height: 24rem;
+  min-height: 30rem;
   background-color: #56BDA2;
-  color: #4d4d4d;
-}
-#skills h2.accounts-links a i {
-  padding: 0.5rem;
-}
-#skills a i {
-  color: #4d4d4d;
-}
-#skills ul {
-  list-style: disc;
-  margin: 0 15%;
 }
 #contact {
-  min-height: 8rem;
+  min-height: 20rem;
   background-color: #DBB13B;
-}
-#contact p,
-#contact a {
-  display: block;
-  text-align: center;
-  margin: 1rem;
 }
 .userLoginForm,
 .userSignUpForm {
@@ -298,8 +278,7 @@ div.error {
 section#users {
   background-color: #56BDA2;
 }
-div.uploadedImg img,
-#about img {
+div.uploadedImg img {
   display: block;
   width: 25rem;
   border: 0.0625rem solid rgba(0, 0, 0, 0.2);
